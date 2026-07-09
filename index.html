@@ -406,9 +406,9 @@
             <div class="logo-title">Chintan Prajapati</div>
             <nav class="nav-links">
                 <a href="#overview">Overview</a>
-                <a href="#enterprise">Enterprise</a>
                 <a href="#personal">Personal Work</a>
                 <a href="#experience">Experience</a>
+                <a href="#enterprise">Enterprise</a>
                 <a href="mailto:ctnprt@gmail.com" class="btn-header">Email Me</a>
             </nav>
         </div>
@@ -450,7 +450,95 @@
         </div>
     </section>
 
-    <!-- Section 1: Enterprise Production Apps (Google Play Store) -->
+    <!-- Section 1: Personal Open Source Work -->
+    <section id="personal" class="container content-section">
+        <h2 class="section-header reveal">Personal Open Source Work</h2>
+        
+        <div class="app-grid">
+            <!-- PulsePath -->
+            <div class="app-card reveal">
+                <div>
+                    <div class="app-category" style="color: var(--google-blue);">Flagship Application</div>
+                    <h4>PulsePath IoT</h4>
+                    <p>A multi-module Android tracking engine showcasing foreground tracking (Android 14 ready), BLE heart-rate sensors mock synchronization, TF Lite fatigue estimation, and OpenStreetMap rendering.</p>
+                </div>
+                <div class="app-footer">
+                    <span class="app-downloads">Open Source</span>
+                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" class="store-btn" style="background-color: var(--google-blue);">GitHub</a>
+                </div>
+            </div>
+
+            <!-- GeoSaver -->
+            <div class="app-card reveal">
+                <div>
+                    <div class="app-category" style="color: var(--google-blue);">Library SDK</div>
+                    <h4>GeoSaver Library</h4>
+                    <p>A battery-adaptive location throttling library. Uses accelerometer sensors to detect movement states and system broadcasts to adjust Fused Location intervals and priorities, saving 40%+ battery life.</p>
+                </div>
+                <div class="app-footer">
+                    <span class="app-downloads">Library SDK</span>
+                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" class="store-btn" style="background-color: var(--google-blue);">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Professional Experience Details -->
+    <section id="experience" class="container content-section">
+        <h2 class="section-header reveal">Professional Experience</h2>
+
+        <div class="experience-list">
+            <!-- Lenskart -->
+            <div class="experience-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <h3>Senior Android Developer (SDE-2) @ <span>Lenskart</span></h3>
+                    </div>
+                    <div class="exp-duration">June 2022 – Present<br>Bengaluru, Karnataka</div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Led the architectural redesign of the universal search experience on the flagship Lenskart app, resulting in an **11% increase in search-attributed revenue**.</li>
+                    <li>Integrated CameraX and local processing logic to capture user facial data, powering server-side machine learning inference for highly personalized 3D product recommendations.</li>
+                    <li>Championed refactoring and bug-fixing sprints, maintaining a sustained **99.8% crash-free rate** on the live application.</li>
+                    <li>Drove the team's adoption of reactive patterns using Kotlin Flow, StateFlow, and modern Jetpack Compose UI components.</li>
+                </ul>
+            </div>
+
+            <!-- Mexus -->
+            <div class="experience-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <h3>Senior Android Developer @ <span>Mexus Education</span></h3>
+                    </div>
+                    <div class="exp-duration">August 2020 – May 2022<br>Vapi, Gujarat</div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Developed the **CoviFind** application using TensorFlow Lite and CameraX for real-time, on-device ML-based test strip detection, including multi-language support.</li>
+                    <li>Architected and delivered user-friendly student, parent, and teacher applications using MVVM, Coroutines, and LiveData to improve educational delivery.</li>
+                    <li>Designed and implemented a robust offline content synchronization mechanism using the Room Persistence Library across the suite.</li>
+                    <li>Integrated real-time video learning sessions via third-party WebRTC libraries and optimized local multimedia streaming using MediaPlayer.</li>
+                </ul>
+            </div>
+
+            <!-- Uffizio -->
+            <div class="experience-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <h3>Android Developer @ <span>Uffizio India</span></h3>
+                    </div>
+                    <div class="exp-duration">November 2016 – July 2020<br>Valsad, Gujarat</div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Led development of **Trakzee**, a high-precision GPS tracking application, implementing Geofencing, Points of Interest (POI), and real-time location filtering.</li>
+                    <li>Built **MobiGPS** using MVVM, utilizing WorkManager and Fused Location Provider to perform background GPS tracking with **15% lower battery consumption**.</li>
+                    <li>Developed specialized Bluetooth Low Energy (BLE) integration using GATT protocols for smart Jacuzzi hardware control systems via TCP/IP.</li>
+                    <li>Implemented full RTL (Right-to-Left) layout and localization capabilities, ensuring application readiness for Middle Eastern and global markets.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Enterprise Production Apps (Google Play Store) -->
     <section id="enterprise" class="container content-section">
         <h2 class="section-header reveal">Enterprise Applications</h2>
         
@@ -531,94 +619,6 @@
                     <span class="app-downloads">10K+ Downloads</span>
                     <a href="https://play.google.com/store/apps/details?id=com.uffizio.taskeye" target="_blank" class="store-btn">Play Store</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 2: Personal Open Source Work -->
-    <section id="personal" class="container content-section">
-        <h2 class="section-header reveal">Personal Open Source Work</h2>
-        
-        <div class="app-grid">
-            <!-- PulsePath -->
-            <div class="app-card reveal">
-                <div>
-                    <div class="app-category" style="color: var(--google-blue);">Flagship Application</div>
-                    <h4>PulsePath IoT</h4>
-                    <p>A multi-module Android tracking engine showcasing foreground tracking (Android 14 ready), BLE heart-rate sensors mock synchronization, TF Lite fatigue estimation, and OpenStreetMap rendering.</p>
-                </div>
-                <div class="app-footer">
-                    <span class="app-downloads">Open Source</span>
-                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" class="store-btn" style="background-color: var(--google-blue);">GitHub</a>
-                </div>
-            </div>
-
-            <!-- GeoSaver -->
-            <div class="app-card reveal">
-                <div>
-                    <div class="app-category" style="color: var(--google-blue);">Library SDK</div>
-                    <h4>GeoSaver Library</h4>
-                    <p>A battery-adaptive location throttling library. Uses accelerometer sensors to detect movement states and system broadcasts to adjust Fused Location intervals and priorities, saving 40%+ battery life.</p>
-                </div>
-                <div class="app-footer">
-                    <span class="app-downloads">Library SDK</span>
-                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" class="store-btn" style="background-color: var(--google-blue);">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Professional Experience Details -->
-    <section id="experience" class="container content-section">
-        <h2 class="section-header reveal">Professional Experience</h2>
-
-        <div class="experience-list">
-            <!-- Lenskart -->
-            <div class="experience-item reveal">
-                <div class="exp-header">
-                    <div class="exp-company">
-                        <h3>Senior Android Developer (SDE-2) @ <span>Lenskart</span></h3>
-                    </div>
-                    <div class="exp-duration">June 2022 – Present<br>Bengaluru, Karnataka</div>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Led the architectural redesign of the universal search experience on the flagship Lenskart app, resulting in an **11% increase in search-attributed revenue**.</li>
-                    <li>Integrated CameraX and local processing logic to capture user facial data, powering server-side machine learning inference for highly personalized 3D product recommendations.</li>
-                    <li>Championed refactoring and bug-fixing sprints, maintaining a sustained **99.8% crash-free rate** on the live application.</li>
-                    <li>Drove the team's adoption of reactive patterns using Kotlin Flow, StateFlow, and modern Jetpack Compose UI components.</li>
-                </ul>
-            </div>
-
-            <!-- Mexus -->
-            <div class="experience-item reveal">
-                <div class="exp-header">
-                    <div class="exp-company">
-                        <h3>Senior Android Developer @ <span>Mexus Education</span></h3>
-                    </div>
-                    <div class="exp-duration">August 2020 – May 2022<br>Vapi, Gujarat</div>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Developed the **CoviFind** application using TensorFlow Lite and CameraX for real-time, on-device ML-based test strip detection, including multi-language support.</li>
-                    <li>Architected and delivered user-friendly student, parent, and teacher applications using MVVM, Coroutines, and LiveData to improve educational delivery.</li>
-                    <li>Designed and implemented a robust offline content synchronization mechanism using the Room Persistence Library across the suite.</li>
-                    <li>Integrated real-time video learning sessions via third-party WebRTC libraries and optimized local multimedia streaming using MediaPlayer.</li>
-                </ul>
-            </div>
-
-            <!-- Uffizio -->
-            <div class="experience-item reveal">
-                <div class="exp-header">
-                    <div class="exp-company">
-                        <h3>Android Developer @ <span>Uffizio India</span></h3>
-                    </div>
-                    <div class="exp-duration">November 2016 – July 2020<br>Valsad, Gujarat</div>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Led development of **Trakzee**, a high-precision GPS tracking application, implementing Geofencing, Points of Interest (POI), and real-time location filtering.</li>
-                    <li>Built **MobiGPS** using MVVM, utilizing WorkManager and Fused Location Provider to perform background GPS tracking with **15% lower battery consumption**.</li>
-                    <li>Developed specialized Bluetooth Low Energy (BLE) integration using GATT protocols for smart Jacuzzi hardware control systems via TCP/IP.</li>
-                    <li>Implemented full RTL (Right-to-Left) layout and localization capabilities, ensuring application readiness for Middle Eastern and global markets.</li>
-                </ul>
             </div>
         </div>
     </section>
