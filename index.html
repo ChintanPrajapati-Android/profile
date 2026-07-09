@@ -8,7 +8,7 @@
     <!-- Google Fonts: Inter for Google Sans feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -24,7 +24,6 @@
             --text-secondary: #5f6368; /* Google grey text */
             --border-color: #dadce0;
             
-            --font-display: 'Inter', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
@@ -34,6 +33,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             font-family: var(--font-body);
@@ -41,6 +44,7 @@
             min-height: 100vh;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         /* Container */
@@ -58,6 +62,11 @@
             top: 0;
             z-index: 100;
             backdrop-filter: blur(8px);
+            transition: box-shadow 0.3s;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .header-content {
@@ -86,10 +95,27 @@
             font-size: 14px;
             font-weight: 500;
             transition: color 0.2s;
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--google-blue);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--google-blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* Google Pill Button */
@@ -98,19 +124,20 @@
             color: #ffffff;
             font-size: 14px;
             font-weight: 600;
-            padding: 10px 24px;
+            padding: 10px 26px;
             border-radius: 100px; /* Material Pill */
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border: none;
-            transition: background-color 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, box-shadow 0.2s;
         }
 
         .btn-pill:hover {
             background-color: #1557b0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.2);
         }
 
         .btn-pill-outline {
@@ -122,21 +149,25 @@
         .btn-pill-outline:hover {
             background-color: rgba(26, 115, 232, 0.04);
             border-color: var(--google-blue);
+            box-shadow: none;
         }
 
         /* Hero Section (Clean, airy, Google-style) */
         .hero {
-            padding: 80px 0 60px 0;
+            padding: 100px 0 80px 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 58px;
             font-weight: 700;
             letter-spacing: -1.5px;
             color: var(--text-primary);
             margin-bottom: 24px;
             line-height: 1.15;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .hero p {
@@ -145,6 +176,15 @@
             max-width: 700px;
             margin: 0 auto 36px auto;
             font-weight: 400;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+        }
+
+        .hero .btn-group {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
         }
 
         /* Specs section (Stats Grid) */
@@ -152,7 +192,13 @@
             background-color: var(--section-bg);
             padding: 60px 0;
             border-radius: 28px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .specs-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         .specs-grid {
@@ -164,10 +210,15 @@
         .spec-item {
             text-align: center;
             padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .spec-item:hover {
+            transform: scale(1.05);
         }
 
         .spec-num {
-            font-size: 40px;
+            font-size: 42px;
             font-weight: 700;
             color: var(--google-blue);
             margin-bottom: 8px;
@@ -185,10 +236,10 @@
 
         /* Section Headings */
         .section-header {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             letter-spacing: -0.5px;
         }
 
@@ -197,7 +248,7 @@
             display: flex;
             align-items: center;
             gap: 60px;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .feature-block:nth-child(even) {
@@ -218,7 +269,7 @@
         }
 
         .feature-title {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 18px;
@@ -257,21 +308,25 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .app-card {
             background-color: var(--section-bg);
             border-radius: 28px; /* High-rounded Google corners */
-            padding: 32px;
+            padding: 36px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
         }
 
         .app-card:hover {
-            transform: scale(1.01);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.04);
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            margin: -1px; /* Offset border offset */
         }
 
         .app-category {
@@ -284,10 +339,15 @@
         }
 
         .app-card h4 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+
+        .app-card:hover h4 {
+            color: var(--google-blue);
         }
 
         .app-card p {
@@ -321,6 +381,31 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .google-play-btn:hover {
+            background-color: #202124;
+        }
+
+        /* Scroll reveal system (Google Store dynamic reveal) */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Keyframes */
+        @keyframes slideUpFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Footer */
@@ -357,7 +442,7 @@
 <body>
 
     <!-- Header Navigation -->
-    <header>
+    <header id="main-header">
         <div class="container header-content">
             <div class="logo-title">Chintan Prajapati</div>
             <nav class="nav-links">
@@ -381,7 +466,7 @@
     </section>
 
     <!-- Specs Section (Vitals Stats) -->
-    <section id="specs" class="container">
+    <section id="specs" class="container reveal-item">
         <div class="specs-section">
             <div class="specs-grid">
                 <div class="spec-item">
@@ -406,10 +491,10 @@
 
     <!-- Experience Features Section -->
     <section id="features" class="container">
-        <h2 class="section-header">Key Engineering Work</h2>
+        <h2 class="section-header reveal-item">Key Engineering Work</h2>
 
         <!-- Feature 1: Lenskart -->
-        <div class="feature-block">
+        <div class="feature-block reveal-item">
             <div class="feature-content">
                 <div class="feature-label">June 2022 – Present</div>
                 <h3 class="feature-title">Senior Android Developer (SDE-2) @ Lenskart</h3>
@@ -423,7 +508,7 @@
         </div>
 
         <!-- Feature 2: Mexus Education -->
-        <div class="feature-block">
+        <div class="feature-block reveal-item">
             <div class="feature-content">
                 <div class="feature-label">August 2020 – May 2022</div>
                 <h3 class="feature-title">Senior Android Developer @ Mexus Education</h3>
@@ -437,7 +522,7 @@
         </div>
 
         <!-- Feature 3: Uffizio -->
-        <div class="feature-block">
+        <div class="feature-block reveal-item">
             <div class="feature-content">
                 <div class="feature-label">November 2016 – July 2020</div>
                 <h3 class="feature-title">Android Developer @ Uffizio India</h3>
@@ -453,11 +538,11 @@
 
     <!-- App Ecosystem Section -->
     <section id="ecosystem" class="container">
-        <h2 class="section-header">Enterprise &amp; Open Source Ecosystem</h2>
+        <h2 class="section-header reveal-item">Enterprise &amp; Open Source Ecosystem</h2>
         
         <div class="app-grid">
             <!-- App 1: Lenskart -->
-            <div class="app-card">
+            <div class="app-card reveal-item">
                 <div>
                     <div class="app-category">E-Commerce</div>
                     <h4>Lenskart App</h4>
@@ -470,7 +555,7 @@
             </div>
 
             <!-- App 2: CoviFind -->
-            <div class="app-card">
+            <div class="app-card reveal-item">
                 <div>
                     <div class="app-category" style="color: var(--google-green);">Healthcare AI</div>
                     <h4>CoviFind App</h4>
@@ -483,7 +568,7 @@
             </div>
 
             <!-- App 3: Trakzee -->
-            <div class="app-card">
+            <div class="app-card reveal-item">
                 <div>
                     <div class="app-category" style="color: var(--google-yellow);">GPS &amp; Fleet</div>
                     <h4>Trakzee App</h4>
@@ -496,7 +581,7 @@
             </div>
 
             <!-- App 4: MobiGPS -->
-            <div class="app-card">
+            <div class="app-card reveal-item">
                 <div>
                     <div class="app-category" style="color: var(--google-yellow);">Location Logger</div>
                     <h4>MobiGPS App</h4>
@@ -509,7 +594,7 @@
             </div>
 
             <!-- App 5: PulsePath -->
-            <div class="app-card">
+            <div class="app-card reveal-item">
                 <div>
                     <div class="app-category">Open Source App</div>
                     <h4>PulsePath IoT</h4>
@@ -517,12 +602,12 @@
                 </div>
                 <div class="app-footer">
                     <span class="app-downloads">Core Architecture</span>
-                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" class="google-play-btn" style="background-color: var(--google-blue);">GitHub Repo</a>
+                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" class="google-play-btn" style="background-color: var(--google-blue); color: #ffffff;">GitHub Repo</a>
                 </div>
             </div>
 
             <!-- App 6: GeoSaver -->
-            <div class="app-card">
+            <div class="app-card reveal-item">
                 <div>
                     <div class="app-category" style="color: var(--google-green);">Open Source SDK</div>
                     <h4>GeoSaver Library</h4>
@@ -530,7 +615,7 @@
                 </div>
                 <div class="app-footer">
                     <span class="app-downloads">Library SDK</span>
-                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" class="google-play-btn" style="background-color: var(--google-blue);">GitHub Repo</a>
+                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" class="google-play-btn" style="background-color: var(--google-blue); color: #ffffff;">GitHub Repo</a>
                 </div>
             </div>
         </div>
@@ -544,5 +629,36 @@
         </div>
     </footer>
 
+    <!-- Google-style Scroll Reveal and Interactive JavaScript -->
+    <script>
+        // Header shadow on scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll-triggered reveal (Google Store style)
+        const revealItems = document.querySelectorAll('.reveal-item');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Reveal once
+                }
+            });
+        }, {
+            threshold: 0.12, // Trigger when 12% of element is visible
+            rootMargin: '0px 0px -40px 0px' // Adjust scroll trigger point
+        });
+
+        revealItems.forEach(item => {
+            revealObserver.observe(item);
+        });
+    </script>
 </body>
 </html>
