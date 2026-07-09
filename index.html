@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chintan Prajapati | Senior Android Engineer</title>
+    <meta name="description" content="Portfolio of Chintan Prajapati, Senior Android Engineer with 9+ years experience specializing in IoT, GPS tracking, and Edge AI.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --bg-gradient-end: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(226, 232, 240, 0.1);
+            --accent-cyan: #06b6d4;
+            --accent-blue: #0ea5e9;
+            --accent-green: #10b981;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dark: #0f172a;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-gradient-end) 100%);
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 32px auto;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+            color: var(--text-dark);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Section Commons */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+        }
+
+        /* Experience Grid & Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent-cyan);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-tag.green {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+        }
+
+        .card-tag.orange {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+
+        .card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--card-border);
+            padding-top: 16px;
+        }
+
+        .card-meta span {
+            font-weight: 500;
+        }
+
+        /* Tech Badges */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-secondary);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Chintan Prajapati</div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#github">Personal Projects</a>
+                <a href="#office">Enterprise Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="container hero">
+        <h1>Senior Android Engineer <br>Specializing in <span>IoT &amp; AI</span></h1>
+        <p>9+ Years of experience building high-scale Android architectures. Currently SDE-2 at Lenskart, Bangalore. Passionate about offline-first tracking systems, Bluetooth BLE GATT sensors, and on-device AI.</p>
+        <div class="btn-group">
+            <a href="https://github.com/ChintanPrajapati-Android" target="_blank" class="btn btn-primary">View GitHub Profile</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">Core Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-tag">Core Architecture</div>
+                <h3>Clean Architecture &amp; Jetpack Compose</h3>
+                <p>Expertise in modularizing multi-module codebases, setting up centralized Version Catalogs, and writing 100% declarative Compose UIs following MVI/MVVM design patterns.</p>
+            </div>
+            <div class="card">
+                <div class="card-tag green">Hardware / IoT</div>
+                <h3>Location &amp; BLE Sensors</h3>
+                <p>Extensive experience with FusedLocationProvider background/foreground tracking services (Android 14 compliant) and Bluetooth Low Energy (BLE) GATT profile communication.</p>
+            </div>
+            <div class="card">
+                <div class="card-tag orange">Edge-AI &amp; DB</div>
+                <h3>TFLite &amp; SQLCipher Caching</h3>
+                <p>On-device AI classification models integration using TensorFlow Lite and secure offline caching utilizing encrypted Room SQLite databases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub / Personal Projects Section -->
+    <section id="github" class="container">
+        <h2 class="section-title">Open Source Showcase</h2>
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <div class="card-tag">Flagship App</div>
+                <h3>PulsePath IoT</h3>
+                <p>A multi-module running analytics app showcasing foreground tracking (Android 14), BLE heart-rate sensor syncing, on-device TensorFlow Lite fatigue predictions, and interactive OpenStreetMap navigation.</p>
+                <div class="tech-badges">
+                    <span class="badge">Jetpack Compose</span>
+                    <span class="badge">BLE GATT</span>
+                    <span class="badge">TF Lite</span>
+                    <span class="badge">OSM</span>
+                </div>
+                <div class="card-meta">
+                    <span>Source Code:</span>
+                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" style="color: var(--accent-cyan); text-decoration: none;">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card">
+                <div class="card-tag green">Library SDK</div>
+                <h3>GeoSaver</h3>
+                <p>A standalone, battery-adaptive GPS tracking library for Android. Dynamically throttles location update intervals and GPS priorities based on accelerometer motion state and system power status.</p>
+                <div class="tech-badges">
+                    <span class="badge">Accelerometer</span>
+                    <span class="badge">Battery Throttling</span>
+                    <span class="badge">Kotlin Flow</span>
+                </div>
+                <div class="card-meta">
+                    <span>Source Code:</span>
+                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" style="color: var(--accent-cyan); text-decoration: none;">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional / Office Projects Section -->
+    <section id="office" class="container">
+        <h2 class="section-title">Enterprise Engineering (Lenskart)</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 30px; max-width: 800px;">Highlights of production achievements and architectural contributions as SDE-2 at Lenskart, Bangalore. (Proprietary details kept confidential).</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-tag">Search &amp; Discovery</div>
+                <h3>Search Funnel Optimization</h3>
+                <p>Led search screen optimizations utilizing modern cache engines, boosting search-to-cart funnel conversions by 11% and reducing network overhead.</p>
+                <div class="tech-badges">
+                    <span class="badge">Impact: +11% Funnel Revenue</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-tag green">Performance</div>
+                <h3>App Reliability &amp; Core Modularization</h3>
+                <p>Drove memory leak fixes and baseline profiles compilation optimizations, maintaining a 99.8% crash-free rate across 10M+ active users.</p>
+                <div class="tech-badges">
+                    <span class="badge">Impact: 99.8% Crash-Free</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container" style="text-align: center;">
+        <h2 class="section-title" style="display: block;">Let's Connect</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 30px auto;">Looking for Senior Android roles (SDE-2 / Senior Android Engineer) targeting Remote US, Europe, Canada, or UAE opportunities.</p>
+        <div class="btn-group">
+            <a href="mailto:ctnprt@gmail.com" class="btn btn-primary">Email: ctnprt@gmail.com</a>
+            <a href="https://www.linkedin.com/in/chintanprajapati" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Chintan Prajapati. Built for high-performance and hostable on GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
