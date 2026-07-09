@@ -12,8 +12,9 @@
     
     <style>
         :root {
-            --bg-color: #ffffff;
-            --section-bg: #f8f9fa; /* Google grey */
+            --bg-color: #f1f5f9;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.4);
             
             --google-blue: #1a73e8;
             --google-red: #ea4335;
@@ -21,8 +22,7 @@
             --google-green: #1e8e3e;
             
             --text-primary: #1f1f1f; /* Google dark charcoal */
-            --text-secondary: #5f6368; /* Google grey text */
-            --border-color: #dadce0;
+            --text-secondary: #4a5568; /* Grey text */
             
             --font-body: 'Inter', sans-serif;
         }
@@ -38,7 +38,9 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            /* Premium pastel mesh gradient background to show through the glass UI */
+            background: linear-gradient(135deg, #e0f2fe 0%, #f1f5f9 50%, #faf5ff 100%);
+            background-attachment: fixed;
             font-family: var(--font-body);
             color: var(--text-primary);
             min-height: 100vh;
@@ -54,19 +56,20 @@
             padding: 0 24px;
         }
 
-        /* Google Store Navigation Bar */
+        /* Google Store Navigation Bar with Glassmorphism */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid var(--glass-border);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(8px);
-            transition: box-shadow 0.3s;
+            backdrop-filter: blur(20px);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         header.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.03);
         }
 
         .header-content {
@@ -137,18 +140,17 @@
         .btn-pill:hover {
             background-color: #1557b0;
             transform: scale(1.03);
-            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.2);
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.25);
         }
 
         .btn-pill-outline {
             background-color: transparent;
             color: var(--google-blue);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--google-blue);
         }
 
         .btn-pill-outline:hover {
-            background-color: rgba(26, 115, 232, 0.04);
-            border-color: var(--google-blue);
+            background-color: rgba(26, 115, 232, 0.06);
             box-shadow: none;
         }
 
@@ -187,18 +189,21 @@
             animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
         }
 
-        /* Specs section (Stats Grid) */
+        /* Specs section with Glassmorphism */
         .specs-section {
-            background-color: var(--section-bg);
+            background-color: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             padding: 60px 0;
-            border-radius: 28px;
+            border-radius: 32px;
             margin-bottom: 80px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.03);
+            transition: transform 0.3s, border-color 0.3s;
         }
 
         .specs-section:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border-color: rgba(26, 115, 232, 0.25);
         }
 
         .specs-grid {
@@ -311,22 +316,25 @@
             margin-bottom: 80px;
         }
 
+        /* App Cards with Glassmorphism */
         .app-card {
-            background-color: var(--section-bg);
-            border-radius: 28px; /* High-rounded Google corners */
+            background-color: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px; /* High-rounded Google corners */
             padding: 36px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.02);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, background-color 0.3s;
         }
 
         .app-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.04);
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            margin: -1px; /* Offset border offset */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(26, 115, 232, 0.25);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
         }
 
         .app-category {
@@ -388,7 +396,7 @@
             background-color: #202124;
         }
 
-        /* Scroll reveal system (Google Store dynamic reveal) */
+        /* Scroll reveal system */
         .reveal-item {
             opacity: 0;
             transform: translateY(40px);
@@ -408,11 +416,12 @@
             }
         }
 
-        /* Footer */
+        /* Footer with Glassmorphic feel */
         footer {
-            background-color: var(--section-bg);
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(16px);
             padding: 60px 0;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--glass-border);
             text-align: center;
             font-size: 13.5px;
             color: var(--text-secondary);
@@ -465,7 +474,7 @@
         </div>
     </section>
 
-    <!-- Specs Section (Vitals Stats) -->
+    <!-- Specs Section (Vitals Stats - Glass Card) -->
     <section id="specs" class="container reveal-item">
         <div class="specs-section">
             <div class="specs-grid">
@@ -624,7 +633,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p style="margin-bottom: 8px;">Designed in the spirit of Material Design &amp; Google Store Pixel experience.</p>
+            <p style="margin-bottom: 8px;">Designed in the spirit of Material Design &amp; Google Store Pixel experience with Glass UI.</p>
             <p>&copy; 2026 Chintan Prajapati. All rights reserved.</p>
         </div>
     </footer>
