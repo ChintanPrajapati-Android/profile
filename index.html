@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chintan Prajapati | Senior Android Engineer</title>
+    <title>Chintan Prajapati | Senior Android Developer</title>
     <meta name="description" content="Senior Android Developer SDE-2 at Lenskart. 9+ years experience specializing in IoT, GPS tracking, and Edge AI.">
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #fafafa;
+            --bg-color: #ffffff;
             --apple-grey: #f5f5f7;
-            --android-green: #1e8e3e; /* Darker green for text readability */
-            --android-green-glow: #3ddc84;
+            --android-green: #3ddc84;
+            --android-green-dark: #1e8e3e;
+            --google-blue: #1a73e8;
             --text-primary: #1d1d1f;
-            --text-secondary: #6e6e73;
-            --text-blue: #0066cc;
-            --border-color: #e5e5e7;
+            --text-secondary: #86868b;
+            --border-color: #d2d2d7;
             --font-family: 'Inter', sans-serif;
         }
 
@@ -38,28 +38,20 @@
             font-family: var(--font-family);
             color: var(--text-primary);
             min-height: 100vh;
-            line-height: 1.45;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1040px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Floating Android Background Elements (Less visible, minimal) */
-        .bg-element {
-            position: absolute;
-            z-index: -1;
-            opacity: 0.04;
-            pointer-events: none;
-        }
-
-        /* Apple Sub-Navigation Bar */
+        /* Header Navigation */
         header {
-            background-color: rgba(250, 250, 252, 0.85);
+            background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
@@ -71,11 +63,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 48px;
+            height: 52px;
         }
 
         .logo-title {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 600;
             color: var(--text-primary);
             letter-spacing: -0.5px;
@@ -84,268 +76,216 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 24px;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 12px;
-            font-weight: 400;
+            font-size: 13px;
+            font-weight: 500;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--google-blue);
         }
 
-        .btn-apple {
+        .btn-header {
             background-color: var(--text-primary);
             color: #ffffff;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 500;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 980px;
             text-decoration: none;
         }
 
-        /* Split Hero Section (Side-by-Side to reduce vertical scroll) */
-        .hero-split {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 40px 0;
-        }
-
-        .hero-text {
-            flex: 1.2;
-            text-align: left;
-        }
-
-        .hero-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--android-green);
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-        }
-
-        .hero-text h1 {
-            font-size: 46px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .hero-text p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        /* Compact Device Mockup */
-        .hero-device {
-            flex: 0.8;
-            display: flex;
-            justify-content: center;
-        }
-
-        .device-container {
-            width: 200px;
-            height: 400px;
-            border: 8px solid #1c1c1e;
-            border-radius: 30px;
-            background-color: #000;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .device-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, #1e1b4b 0%, #0f172a 100%);
-            padding: 16px;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .device-screen h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--android-green-glow);
-        }
-
-        .device-screen p {
-            font-size: 9px;
-            color: #94a3b8;
-        }
-
-        .device-screen-stats {
-            background: rgba(255,255,255,0.06);
-            border-radius: 8px;
-            padding: 8px;
-            margin-top: 10px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .device-screen-stat-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 9px;
-            margin-bottom: 4px;
-        }
-
-        .device-notch {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 16px;
-            background-color: #1c1c1e;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            z-index: 2;
-        }
-
-        /* Compact Specs Section */
-        .specs-section {
-            padding: 30px 0;
-            background-color: var(--apple-grey);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            border-radius: 18px;
-            margin-bottom: 40px;
-        }
-
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+        /* Hero */
+        .hero {
+            padding: 60px 0 40px 0;
             text-align: center;
         }
 
-        .spec-item h3 {
-            font-size: 34px;
-            font-weight: 700;
-            letter-spacing: -1px;
+        .hero h1 {
+            font-size: 58px;
+            font-weight: 800;
+            letter-spacing: -2.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
             color: var(--text-primary);
-            margin-bottom: 2px;
         }
 
-        .spec-item p {
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Top Interactive Highlight Card (Motionable) */
+        .highlight-card-wrapper {
+            margin-bottom: 50px;
+        }
+
+        .highlight-card {
+            background-color: var(--apple-grey);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 36px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
+            overflow: hidden;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(61, 220, 132, 0.12);
+            border-color: var(--android-green);
+        }
+
+        /* Animated Pulsing Dot inside Highlight Card */
+        .pulse-indicator {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 11px;
+            font-weight: 600;
+            color: var(--android-green-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--android-green);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--android-green);
+            border-radius: 50%;
+            animation: pulse-ring 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        /* Stats grid inside Highlight Card */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover .stat-item {
+            transform: translateY(-2px);
+        }
+
+        .stat-num {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--google-blue);
+            letter-spacing: -1.5px;
+            margin-bottom: 4px;
+            transition: color 0.3s;
+        }
+
+        .stat-num.green { color: var(--android-green-dark); }
+        .stat-num.orange { color: #d97706; }
+
+        .highlight-card:hover .stat-num {
+            color: var(--text-primary);
+        }
+        .highlight-card:hover .stat-num.green { color: var(--android-green-dark); }
+        .highlight-card:hover .stat-num.orange { color: #d97706; }
+
+        .stat-label {
+            font-size: 12px;
             color: var(--text-secondary);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Side-by-Side Experience Layout (Massively reduces scroll) */
-        .experience-section {
-            margin-bottom: 40px;
+        /* Section Commons */
+        .content-section {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
         }
 
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .experience-card {
-            background-color: var(--apple-grey);
-            border-radius: 18px;
-            padding: 24px;
-            border: 1px solid var(--border-color);
-        }
-
-        .exp-label {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--android-green);
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .exp-title {
-            font-size: 18px;
+        .section-header {
+            font-size: 26px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 12px;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
         }
 
-        .exp-desc {
-            font-size: 13px;
-            color: var(--text-secondary);
-            list-style-type: none;
-        }
-
-        .exp-desc li {
-            margin-bottom: 8px;
-            padding-left: 16px;
-            position: relative;
-        }
-
-        .exp-desc li::before {
-            content: "✦";
-            color: var(--android-green);
-            position: absolute;
-            left: 0;
-            font-size: 12px;
-        }
-
-        /* Compact Apps Grid */
-        .ecosystem-section {
-            margin-bottom: 40px;
-        }
-
+        /* Enterprise Play Store Grid */
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 20px;
         }
 
         .app-card {
             background-color: var(--apple-grey);
-            border-radius: 18px;
+            border-radius: 20px;
             padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             border: 1px solid var(--border-color);
-            transition: transform 0.2s;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
         }
 
         .app-card:hover {
-            transform: scale(1.01);
+            transform: translateY(-4px);
+            border-color: var(--google-blue);
         }
 
         .app-category {
             font-size: 10px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
         }
 
         .app-card h4 {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .app-card p {
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             flex-grow: 1;
         }
 
@@ -353,12 +293,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(0,0,0,0.04);
             padding-top: 12px;
         }
 
         .app-downloads {
-            font-size: 12px;
+            font-size: 12.5px;
             font-weight: 600;
             color: var(--text-primary);
         }
@@ -367,13 +307,75 @@
             background-color: var(--text-primary);
             color: #ffffff;
             font-size: 11px;
-            font-weight: 500;
-            padding: 5px 12px;
+            font-weight: 600;
+            padding: 6px 14px;
             border-radius: 980px;
             text-decoration: none;
+            transition: background-color 0.2s;
         }
 
-        /* Reveal transitions */
+        .store-btn:hover {
+            background-color: #333336;
+        }
+
+        /* Work Experience Blocks */
+        .experience-item {
+            margin-bottom: 30px;
+            background-color: var(--apple-grey);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .exp-company h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .exp-company span {
+            color: var(--google-blue);
+        }
+
+        .exp-duration {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .exp-bullets {
+            list-style-type: none;
+        }
+
+        .exp-bullets li {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .exp-bullets li::before {
+            content: "✦";
+            color: var(--google-blue);
+            position: absolute;
+            left: 0;
+            font-size: 11px;
+        }
+
+        .exp-bullets strong {
+            color: var(--text-primary);
+        }
+
+        /* Scroll reveal class */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -388,40 +390,15 @@
         /* Footer */
         footer {
             background-color: var(--apple-grey);
-            padding: 40px 0;
+            padding: 50px 0;
             border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             color: var(--text-secondary);
-        }
-
-        footer a {
-            color: var(--text-blue);
-            text-decoration: none;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 800px) {
-            .hero-split {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 0;
-            }
-            .hero-text {
-                text-align: center;
-            }
-            .nav-links {
-                display: none;
-            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Floating OS background item -->
-    <svg class="bg-element" style="top: 10%; left: 5%; width: 100px; height: 100px;" viewBox="0 0 24 24" fill="none" stroke="#3ddc84" stroke-width="0.5">
-        <circle cx="12" cy="12" r="10" stroke-dasharray="3 3"/>
-    </svg>
 
     <!-- Header Navigation -->
     <header>
@@ -429,132 +406,64 @@
             <div class="logo-title">Chintan Prajapati</div>
             <nav class="nav-links">
                 <a href="#overview">Overview</a>
-                <a href="#specs">Specs</a>
+                <a href="#enterprise">Enterprise</a>
+                <a href="#personal">Personal Work</a>
                 <a href="#experience">Experience</a>
-                <a href="#ecosystem">Apps</a>
-                <a href="mailto:ctnprt@gmail.com" class="btn-apple">Email Me</a>
+                <a href="mailto:ctnprt@gmail.com" class="btn-header">Email Me</a>
             </nav>
         </div>
     </header>
 
-    <!-- Split Hero Overview Section (Less scrolling) -->
-    <section id="overview" class="container">
-        <div class="hero-split">
-            <div class="hero-text">
-                <div class="hero-label">Android OS Engineering</div>
-                <h1>Chintan Prajapati.</h1>
-                <p>9+ Years of experience leading architectural designs for complex Android applications. Specializing in Fused Location tracking, Bluetooth BLE GATT devices, TensorFlow Lite edge models, and declarative Jetpack Compose.</p>
-                <div class="btn-group">
-                    <a href="https://linkedin.com/in/chintanprajapati1993" target="_blank" class="btn-apple" style="padding: 8px 20px; font-size: 13px;">Connect on LinkedIn</a>
-                </div>
+    <!-- Overview Hero -->
+    <section id="overview" class="container hero">
+        <h1>Chintan Prajapati</h1>
+        <p>Senior Android Developer with 9+ years of experience leading mobile app architectures. Specializing in background location tracking, BLE integrations, edge AI modeling, and declarative UI development.</p>
+    </section>
+
+    <!-- Top Highlight Card with Motionable elements (Vitals Stats) -->
+    <section class="container highlight-card-wrapper reveal">
+        <div class="highlight-card">
+            <!-- Dynamic pulsing dot -->
+            <div class="pulse-indicator">
+                <div class="pulse-dot"></div>
+                <span>Status: Optimized</span>
             </div>
-            <div class="hero-device">
-                <div class="device-container">
-                    <div class="device-notch"></div>
-                    <div class="device-screen">
-                        <div>
-                            <h4>PulsePath IoT</h4>
-                            <p>BLE Heart Rate Syncing</p>
-                            <div class="device-screen-stats">
-                                <div class="device-screen-stat-row">
-                                    <span>Status:</span> <span style="color:var(--android-green-glow);">Active</span>
-                                </div>
-                                <div class="device-screen-stat-row">
-                                    <span>Heart Rate:</span> <span>72 bpm</span>
-                                </div>
-                                <div class="device-screen-stat-row">
-                                    <span>GPS:</span> <span>Connected</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="font-size: 8px; color: #64748b; text-align: center;">
-                            Running Edge-AI Diagnostics
-                        </div>
-                    </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-num">9+ Years</div>
+                    <div class="stat-label">Android Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num green">11% UP</div>
+                    <div class="stat-label">Lenskart Search Revenue</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">99.8%</div>
+                    <div class="stat-label">Sustained Crash-Free</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num orange">15% Less</div>
+                    <div class="stat-label">GPS Battery Drain</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specs Section -->
-    <section id="specs" class="container">
-        <div class="specs-section reveal">
-            <div class="specs-grid">
-                <div class="spec-item">
-                    <h3>9+ Years</h3>
-                    <p>Experience</p>
-                </div>
-                <div class="spec-item">
-                    <h3 style="color: var(--android-green);">11% UP</h3>
-                    <p>Lenskart Revenue</p>
-                </div>
-                <div class="spec-item">
-                    <h3>99.8%</h3>
-                    <p>Crash-Free Rate</p>
-                </div>
-                <div class="spec-item" style="color: #d97706;">
-                    <h3>15% Less</h3>
-                    <p>GPS Battery</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Side-by-Side Experience Grid (Greatly reduces scroll) -->
-    <section id="experience" class="container experience-section">
-        <h2 class="section-header reveal" style="font-size: 26px; margin-bottom: 24px;">Key Engineering Work</h2>
-        
-        <div class="experience-grid">
-            <!-- Card 1: Lenskart -->
-            <div class="experience-card reveal">
-                <div class="exp-label">June 2022 – Present</div>
-                <h3 class="exp-title">Senior Developer (SDE-2) @ Lenskart</h3>
-                <ul class="exp-desc">
-                    <li>Led redesign of universal search experience, driving **11% increase in search revenue**.</li>
-                    <li>Integrated **CameraX** local facial scanning for 3D recommendations.</li>
-                    <li>Maintained **99.8% crash-free rate** on live app.</li>
-                    <li>Adopted Kotlin Flow, StateFlow and Jetpack Compose.</li>
-                </ul>
-            </div>
-
-            <!-- Card 2: Mexus Education -->
-            <div class="experience-card reveal">
-                <div class="exp-label">August 2020 – May 2022</div>
-                <h3 class="exp-title">Senior Developer @ Mexus Education</h3>
-                <ul class="exp-desc">
-                    <li>Developed **CoviFind** using **TensorFlow Lite** and **CameraX** for real-time ML detection.</li>
-                    <li>Implemented Room DB local caching for zero-latency offline sync.</li>
-                    <li>Integrated real-time video lectures utilizing **WebRTC** libraries.</li>
-                </ul>
-            </div>
-
-            <!-- Card 3: Uffizio -->
-            <div class="experience-card reveal">
-                <div class="exp-label">November 2016 – July 2020</div>
-                <h3 class="exp-title">Android Developer @ Uffizio India</h3>
-                <ul class="exp-desc">
-                    <li>Developed **Trakzee** high-precision GPS fleet tracker with geofencing.</li>
-                    <li>Built **MobiGPS** reducing idle background tracking battery by **15%**.</li>
-                    <li>Developed **BLE GATT** controller profiles for IoT Jacuzzi systems.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Ecosystem Section -->
-    <section id="ecosystem" class="container ecosystem-section">
-        <h2 class="section-header reveal" style="font-size: 26px; margin-bottom: 24px;">Ecosystem &amp; Open Source</h2>
+    <!-- Section 1: Enterprise Production Apps (Google Play Store) -->
+    <section id="enterprise" class="container content-section">
+        <h2 class="section-header reveal">Enterprise Applications</h2>
         
         <div class="app-grid">
             <!-- App 1 -->
             <div class="app-card reveal">
                 <div>
-                    <div class="app-category">Lenskart App</div>
-                    <h4>10M+ Active Users</h4>
-                    <p>Optimized core search modules, virtual try-on CameraX frameworks, and achieved a crash-free rate of 99.8%.</p>
+                    <div class="app-category">E-Commerce</div>
+                    <h4>Lenskart App</h4>
+                    <p>Engineered search screen funnel enhancements and CameraX 3D virtual try-on modules. Maintained a 99.8% crash-free rate across 10M+ active users.</p>
                 </div>
                 <div class="app-footer">
-                    <span class="app-downloads">E-Commerce</span>
+                    <span class="app-downloads">10M+ Downloads</span>
                     <a href="https://play.google.com/store/apps/details?id=com.lenskart.app&hl=en_IN" target="_blank" class="store-btn">Play Store</a>
                 </div>
             </div>
@@ -562,12 +471,12 @@
             <!-- App 2 -->
             <div class="app-card reveal">
                 <div>
-                    <div class="app-category" style="color: var(--android-green);">CoviFind App</div>
-                    <h4>1M+ Downloads</h4>
-                    <p>Developed real-time, on-device antigen test strip detection modules powered by TensorFlow Lite and CameraX.</p>
+                    <div class="app-category" style="color: var(--android-green-dark);">Healthcare AI</div>
+                    <h4>CoviFind App</h4>
+                    <p>Developed the on-device AI classification module using TensorFlow Lite to identify test strip readings in real-time, helping millions verify antigen tests.</p>
                 </div>
                 <div class="app-footer">
-                    <span class="app-downloads">Healthcare AI</span>
+                    <span class="app-downloads">1M+ Downloads</span>
                     <a href="https://play.google.com/store/apps/details?id=com.meril.covifind&hl=en_IN" target="_blank" class="store-btn">Play Store</a>
                 </div>
             </div>
@@ -575,12 +484,12 @@
             <!-- App 3 -->
             <div class="app-card reveal">
                 <div>
-                    <div class="app-category" style="color: #d97706;">Trakzee App</div>
-                    <h4>100K+ Downloads</h4>
-                    <p>High-precision tracking app including complex geofencing boundaries, customizable triggers, and analytics chart engines.</p>
+                    <div class="app-category" style="color: #d97706;">GPS &amp; Fleet</div>
+                    <h4>Trakzee App</h4>
+                    <p>High-precision vehicle and fleet tracking app supporting geofencing, alerts, real-time bearing vehicle directions, and analytical charts.</p>
                 </div>
                 <div class="app-footer">
-                    <span class="app-downloads">GPS Tracking</span>
+                    <span class="app-downloads">100K+ Downloads</span>
                     <a href="https://play.google.com/store/apps/details?id=com.uffizio.trakzee&hl=en_IN" target="_blank" class="store-btn">Play Store</a>
                 </div>
             </div>
@@ -588,12 +497,12 @@
             <!-- App 4 -->
             <div class="app-card reveal">
                 <div>
-                    <div class="app-category" style="color: #d97706;">MobiGPS App</div>
-                    <h4>50K+ Downloads</h4>
-                    <p>A background GPS logger utilizing Fused Location Provider and WorkManager to trim idle battery usage by 15%.</p>
+                    <div class="app-category" style="color: #d97706;">Location Logger</div>
+                    <h4>MobiGPS App</h4>
+                    <p>A background location logging app engineered using WorkManager and Fused Location Provider to reduce battery overhead by 15%.</p>
                 </div>
                 <div class="app-footer">
-                    <span class="app-downloads">GPS Logger</span>
+                    <span class="app-downloads">50K+ Downloads</span>
                     <a href="https://play.google.com/store/apps/details?id=com.uffizio.mobigps" target="_blank" class="store-btn">Play Store</a>
                 </div>
             </div>
@@ -601,27 +510,115 @@
             <!-- App 5 -->
             <div class="app-card reveal">
                 <div>
-                    <div class="app-category">PulsePath IoT</div>
-                    <h4>Personal Showcase</h4>
-                    <p>Multi-module Compose project implementing foreground tracking (Android 14 ready), BLE GATT sync, and on-device AI.</p>
+                    <div class="app-category" style="color: #d97706;">Asset Locator</div>
+                    <h4>Minitrakzee</h4>
+                    <p>A lightweight vehicle and asset locator, optimized for low memory usage and clean, real-time map displays on older Android devices.</p>
                 </div>
                 <div class="app-footer">
-                    <span class="app-downloads">Open Source</span>
-                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" class="store-btn">GitHub</a>
+                    <span class="app-downloads">10K+ Downloads</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.uffizio.minitrakzee" target="_blank" class="store-btn">Play Store</a>
                 </div>
             </div>
 
             <!-- App 6 -->
             <div class="app-card reveal">
                 <div>
-                    <div class="app-category" style="color: var(--android-green);">GeoSaver SDK</div>
-                    <h4>Personal Library</h4>
-                    <p>A battery-adaptive tracking library throttling update requests dynamically based on accelerometer sensor inputs.</p>
+                    <div class="app-category" style="color: #d97706;">Logistics Tracking</div>
+                    <h4>TaskEye App</h4>
+                    <p>A field staff and task tracking application facilitating location logging, attendance recording, and dispatch tracking.</p>
+                </div>
+                <div class="app-footer">
+                    <span class="app-downloads">10K+ Downloads</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.uffizio.taskeye" target="_blank" class="store-btn">Play Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Personal Open Source Work -->
+    <section id="personal" class="container content-section">
+        <h2 class="section-header reveal">Personal Open Source Work</h2>
+        
+        <div class="app-grid">
+            <!-- PulsePath -->
+            <div class="app-card reveal">
+                <div>
+                    <div class="app-category" style="color: var(--google-blue);">Flagship Application</div>
+                    <h4>PulsePath IoT</h4>
+                    <p>A multi-module Android tracking engine showcasing foreground tracking (Android 14 ready), BLE heart-rate sensors mock synchronization, TF Lite fatigue estimation, and OpenStreetMap rendering.</p>
+                </div>
+                <div class="app-footer">
+                    <span class="app-downloads">Open Source</span>
+                    <a href="https://github.com/ChintanPrajapati-Android/Pulse-Iot" target="_blank" class="store-btn" style="background-color: var(--google-blue);">GitHub</a>
+                </div>
+            </div>
+
+            <!-- GeoSaver -->
+            <div class="app-card reveal">
+                <div>
+                    <div class="app-category" style="color: var(--google-blue);">Library SDK</div>
+                    <h4>GeoSaver Library</h4>
+                    <p>A battery-adaptive location throttling library. Uses accelerometer sensors to detect movement states and system broadcasts to adjust Fused Location intervals and priorities, saving 40%+ battery life.</p>
                 </div>
                 <div class="app-footer">
                     <span class="app-downloads">Library SDK</span>
-                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" class="store-btn">GitHub</a>
+                    <a href="https://github.com/ChintanPrajapati-Android/geosaver" target="_blank" class="store-btn" style="background-color: var(--google-blue);">GitHub</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Professional Experience Details -->
+    <section id="experience" class="container content-section">
+        <h2 class="section-header reveal">Professional Experience</h2>
+
+        <div class="experience-list">
+            <!-- Lenskart -->
+            <div class="experience-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <h3>Senior Android Developer (SDE-2) @ <span>Lenskart</span></h3>
+                    </div>
+                    <div class="exp-duration">June 2022 – Present<br>Bengaluru, Karnataka</div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Led the architectural redesign of the universal search experience on the flagship Lenskart app, resulting in an **11% increase in search-attributed revenue**.</li>
+                    <li>Integrated CameraX and local processing logic to capture user facial data, powering server-side machine learning inference for highly personalized 3D product recommendations.</li>
+                    <li>Championed refactoring and bug-fixing sprints, maintaining a sustained **99.8% crash-free rate** on the live application.</li>
+                    <li>Drove the team's adoption of reactive patterns using Kotlin Flow, StateFlow, and modern Jetpack Compose UI components.</li>
+                </ul>
+            </div>
+
+            <!-- Mexus -->
+            <div class="experience-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <h3>Senior Android Developer @ <span>Mexus Education</span></h3>
+                    </div>
+                    <div class="exp-duration">August 2020 – May 2022<br>Vapi, Gujarat</div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Developed the **CoviFind** application using TensorFlow Lite and CameraX for real-time, on-device ML-based test strip detection, including multi-language support.</li>
+                    <li>Architected and delivered user-friendly student, parent, and teacher applications using MVVM, Coroutines, and LiveData to improve educational delivery.</li>
+                    <li>Designed and implemented a robust offline content synchronization mechanism using the Room Persistence Library across the suite.</li>
+                    <li>Integrated real-time video learning sessions via third-party WebRTC libraries and optimized local multimedia streaming using MediaPlayer.</li>
+                </ul>
+            </div>
+
+            <!-- Uffizio -->
+            <div class="experience-item reveal">
+                <div class="exp-header">
+                    <div class="exp-company">
+                        <h3>Android Developer @ <span>Uffizio India</span></h3>
+                    </div>
+                    <div class="exp-duration">November 2016 – July 2020<br>Valsad, Gujarat</div>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Led development of **Trakzee**, a high-precision GPS tracking application, implementing Geofencing, Points of Interest (POI), and real-time location filtering.</li>
+                    <li>Built **MobiGPS** using MVVM, utilizing WorkManager and Fused Location Provider to perform background GPS tracking with **15% lower battery consumption**.</li>
+                    <li>Developed specialized Bluetooth Low Energy (BLE) integration using GATT protocols for smart Jacuzzi hardware control systems via TCP/IP.</li>
+                    <li>Implemented full RTL (Right-to-Left) layout and localization capabilities, ensuring application readiness for Middle Eastern and global markets.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -629,7 +626,6 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p style="margin-bottom: 4px;">Designed in the spirit of Apple Product pages, with Android OS background theme.</p>
             <p>&copy; 2026 Chintan Prajapati. All rights reserved.</p>
         </div>
     </footer>
