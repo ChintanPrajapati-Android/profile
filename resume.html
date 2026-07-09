@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chintan Prajapati - Senior Android Developer Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --primary-light: #3b82f6;
+            --text: #334155;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            background-color: var(--primary-light);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: #2563eb;
+        }
+
+        /* Header Style */
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.05em;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary-light);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Section General Styles */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        p.summary-text {
+            font-size: 15px;
+            color: var(--text);
+            text-align: justify;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-group {
+            background: #f1f5f9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .skill-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .skill-list {
+            font-size: 13.5px;
+            color: var(--text-light);
+        }
+
+        /* Experience Styles */
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .job-title-company {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .company-name {
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+
+        .job-meta {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .job-bullets {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .job-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+
+        /* Education Styles */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .edu-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .edu-meta {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background-color: var(--white);
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                margin-bottom: 10px;
+                padding-bottom: 4px;
+            }
+
+            section {
+                margin-bottom: 25px;
+            }
+
+            .job {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Print Button for User -->
+        <button class="print-btn" onclick="window.print()">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+            </svg>
+            Save as PDF
+        </button>
+
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>Chintan Prajapati</h1>
+                    <div class="subtitle">Senior Android Developer</div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> <a href="mailto:ctnprt@gmail.com">ctnprt@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> +91-9586495453
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/chintanprajapati1993" target="_blank">linkedin.com/in/chintanprajapati1993</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Portfolio:</strong> <a href="https://chintanprajapati-android.github.io/profile/" target="_blank">chintanprajapati-android.github.io/profile</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <p class="summary-text">
+                Highly accomplished and results-driven Senior Android Developer with <strong>9+ years of extensive experience</strong> in the full mobile application lifecycle. Expert in Kotlin and Java, specializing in modern Android architecture patterns (Clean Architecture, MVVM) and Jetpack Compose. Proven track record in leading high-impact features, optimizing performance to achieve a <strong>99.8% crash-free ratio</strong>, and successfully integrating advanced IoT, Bluetooth Low Energy (BLE), and on-device Machine Learning (TensorFlow Lite) technologies. Strong advocate for clean code, automated testing, and scalable architecture.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <div class="skill-title">Languages & Architecture</div>
+                    <div class="skill-list">Kotlin, Java, Clean Architecture, MVVM, SOLID, Dependency Injection (Hilt, Koin)</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-title">UI & Frameworks</div>
+                    <div class="skill-list">Jetpack Compose, XML, Coroutines & Flow, WorkManager, CameraX</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-title">Testing & Storage</div>
+                    <div class="skill-list">JUnit, Mockito, Espresso, Room Database, SQLite, Offline Sync</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-title">Hardware & Integrations</div>
+                    <div class="skill-list">BLE (GATT), Fused Location, GPS Tracking, WebRTC, TensorFlow Lite</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-title">CI/CD & DevOps</div>
+                    <div class="skill-list">Git, GitHub Actions, Bitrise, Gradle, Firebase Crashlytics</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-title">AI & Productivity Tools</div>
+                    <div class="skill-list">Cursor (AI IDE), Claude, Antigravity</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-company">
+                        Senior Android Developer (SDE-2) at <span class="company-name">Lenskart</span>
+                    </div>
+                    <div class="job-meta">
+                        <div>June 2022 – Present</div>
+                        <div>Bengaluru, Karnataka</div>
+                    </div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led the architectural redesign of the universal search experience on the flagship Lenskart app, resulting in an <strong>11% increase in search-attributed revenue</strong>.</li>
+                    <li>Integrated CameraX and local processing logic to capture user facial data, powering server-side machine learning inference for highly personalized 3D product recommendations.</li>
+                    <li>Championed refactoring and bug-fixing sprints, maintaining a sustained <strong>99.8% crash-free rate</strong> on the live application.</li>
+                    <li>Drove the team's adoption of reactive patterns using Kotlin Flow, StateFlow, and modern Jetpack Compose UI components.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-company">
+                        Senior Android Developer at <span class="company-name">Mexus Education</span>
+                    </div>
+                    <div class="job-meta">
+                        <div>August 2020 – May 2022</div>
+                        <div>Vapi, Gujarat</div>
+                    </div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Architected and delivered user-friendly student, parent, and teacher applications using MVVM, Coroutines, and LiveData to improve educational delivery.</li>
+                    <li>Developed the Covifind application using TensorFlow Lite and CameraX for real-time, on-device ML-based test strip detection, including multi-language support.</li>
+                    <li>Designed and implemented a robust offline content synchronization mechanism using the Room Persistence Library across the suite.</li>
+                    <li>Integrated real-time video learning sessions via third-party WebRTC libraries and optimized local multimedia streaming using MediaPlayer.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-company">
+                        Android Developer at <span class="company-name">Uffizio India Software Consultants</span>
+                    </div>
+                    <div class="job-meta">
+                        <div>November 2016 – July 2020</div>
+                        <div>Valsad, Gujarat</div>
+                    </div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led development of "Trakzee", a high-precision GPS tracking application, implementing Geofencing, Points of Interest (POI), and real-time location filtering.</li>
+                    <li>Built "MobiGPS" using MVVM, utilizing WorkManager and Fused Location Provider to perform background GPS tracking with 15% lower battery consumption.</li>
+                    <li>Developed specialized Bluetooth Low Energy (BLE) integration using GATT protocols for smart Jacuzzi hardware control systems via TCP/IP.</li>
+                    <li>Implemented full RTL (Right-to-Left) layout and localization capabilities, ensuring application readiness for Middle Eastern and global markets.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div>
+                    <div class="edu-title">Bachelor of Engineering in Computer Engineering</div>
+                    <div style="font-size: 14px; color: var(--text-light);">Gujarat Technological University</div>
+                </div>
+                <div class="edu-meta">
+                    <div>Aug 2011 – Jun 2016</div>
+                    <div>Ahmedabad, India</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
