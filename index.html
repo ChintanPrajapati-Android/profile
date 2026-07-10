@@ -483,8 +483,16 @@
                 gap: 32px;
                 padding-bottom: 20px;
             }
+            .hero-text-block {
+                text-align: center; /* Center the text container */
+            }
             .hero-photo-block {
                 order: -1; /* Photo on top of text on mobile */
+            }
+            .profile-photo-container {
+                width: 140px; /* Make the photo container smaller */
+                height: 140px;
+                border-radius: 24px;
             }
             .top-contacts {
                 justify-content: center;
@@ -495,18 +503,24 @@
         }
 
         @media (max-width: 600px) {
+            .container {
+                padding: 0 16px; /* Keep margins consistent on mobile sides */
+            }
             .hero-text-block h1 {
-                font-size: 38px;
+                font-size: 36px;
                 letter-spacing: -1.5px;
             }
             .hero-text-block h2 {
-                font-size: 15px;
+                font-size: 14px;
             }
             .hero-text-block p {
                 font-size: 14.5px;
             }
             .section-header {
                 font-size: 22px;
+            }
+            .experience-item {
+                padding: 20px 16px; /* Compact padding for mobile experience cards */
             }
             .exp-header {
                 flex-direction: column;
@@ -531,10 +545,17 @@
             }
             .highlight-card {
                 padding: 24px 16px;
+                border-radius: 20px;
             }
             .pulse-indicator {
                 top: 12px;
                 right: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-grid {
+                grid-template-columns: 1fr; /* Prevent grid columns from overflowing phone screen bounds */
             }
         }
     </style>
